@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"encoding/xml"
 	"regexp"
-	"log"
 )
 
 type (
@@ -79,8 +78,6 @@ func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Resu
 
 		if matched {
 
-			log.Println( "matched...", matched )
-
 			results = append(results, &search.Result{
 				Field:   "Title",
 				Content: channelItem.Title,
@@ -94,8 +91,6 @@ func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Resu
 		}
 
 		if matched {
-
-			log.Println( "matched...2", matched )
 
 			results = append(results, &search.Result{
 				Field:   "Description",
